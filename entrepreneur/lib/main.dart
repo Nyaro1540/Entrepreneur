@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/material.dart';
 
 void main() {
-  runApp(GameWidget(game: EntrepreneurGame()));
+  runApp(const MyApp());
 }
 
-class EntrepreneurGame extends FlameGame {
-  @override
-  Color backgroundColor() => const Color(0xFF333333); // Fond gris foncé
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
-  Future<void> onLoad() async {
-    // Tout le code de jeu viendra ici !
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: GameWidget(game: EntrepreneurGame()), // Point d'entrée du jeu
+    );
   }
 }
