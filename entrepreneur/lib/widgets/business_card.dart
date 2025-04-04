@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:entrepreneur/models/business.dart';
+import 'package:flutter/material.dart';
 
 class BusinessCard extends StatelessWidget {
   final Business business;

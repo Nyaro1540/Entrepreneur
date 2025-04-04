@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:entrepreneur/widgets/animated_logo.dart';
 import 'package:entrepreneur/widgets/menu_button.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,16 +28,16 @@ class HomeScreen extends StatelessWidget {
               Text(
                 'EntrepreneurQuest',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
               const SizedBox(height: 8),
               Text(
                 'Votre aventure entrepreneuriale commence ici',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: Colors.white.withOpacity(0.9),
-                ),
+                      color: Colors.white.withOpacity(0.9),
+                    ),
                 textAlign: TextAlign.center,
               ),
               const Spacer(),
@@ -74,8 +74,8 @@ class HomeScreen extends StatelessWidget {
                 child: Text(
                   'v1.0.0 • Play to Learn',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.white.withOpacity(0.7),
-                  ),
+                        color: Colors.white.withOpacity(0.7),
+                      ),
                 ),
               ),
             ],
