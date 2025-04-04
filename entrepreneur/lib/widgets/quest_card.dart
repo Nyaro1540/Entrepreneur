@@ -4,7 +4,7 @@ import 'package:entrepreneur/models/quest.dart';
 class QuestCard extends StatelessWidget {
   final Quest quest;
 
-  const QuestCard({Key? key, required this.quest}) : super(key: key);
+  const QuestCard({super.key, required this.quest});
 
   @override
   Widget build(BuildContext context) {
@@ -150,23 +150,22 @@ class QuestCard extends StatelessWidget {
         Wrap(
           spacing: 8,
           runSpacing: 8,
-          children:
-              quest.requirements.map((req) {
-                return Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    req,
-                    style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                  ),
-                );
-              }).toList(),
+          children: quest.requirements.map((req) {
+            return Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8,
+                vertical: 4,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                req,
+                style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+              ),
+            );
+          }).toList(),
         ),
       ],
     );
@@ -209,50 +208,49 @@ class QuestCard extends StatelessWidget {
   void _showQuestDetailsDialog(BuildContext context) {
     showDialog(
       context: context,
-      builder:
-          (context) => AlertDialog(
-            title: Text(quest.title),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(quest.description),
-                const SizedBox(height: 16),
-                const Text(
-                  'Étapes:',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                ...quest.steps.asMap().entries.map((entry) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('${entry.key + 1}. '),
-                        Expanded(child: Text(entry.value)),
-                      ],
-                    ),
-                  );
-                }),
-              ],
+      builder: (context) => AlertDialog(
+        title: Text(quest.title),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(quest.description),
+            const SizedBox(height: 16),
+            const Text(
+              'Étapes:',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Annuler'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  // Start the quest
-                },
-                child: const Text('Commencer'),
-              ),
-            ],
+            const SizedBox(height: 8),
+            ...quest.steps.asMap().entries.map((entry) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('${entry.key + 1}. '),
+                    Expanded(child: Text(entry.value)),
+                  ],
+                ),
+              );
+            }),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text('Annuler'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+              // Start the quest
+            },
+            child: const Text('Commencer'),
+          ),
+        ],
+      ),
     );
   }
 }

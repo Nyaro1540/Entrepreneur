@@ -29,7 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/image/Players
+    - assets/images/Players/
     - assets/images/maps/
     - assets/images/ui/
     - assets/audio/
