@@ -1,5 +1,5 @@
 import 'package:flame/game.dart';
-import 'package:entrepreneur_quest/game/scenes/main_scene.dart';
+import 'package:entrepreneur/game/scenes/main_scene.dart';
 
 class EntrepreneurGame extends FlameGame {
   @override

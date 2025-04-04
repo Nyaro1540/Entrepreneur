@@ -1,6 +1,6 @@
+import 'package:entrepreneur/game/scenes/main_scene.dart';
 import 'package:flame/components.dart';
-import 'package:entrepreneur_quest/game/components/player.dart';
-import 'package:entrepreneur_quest/game/components/npc.dart';
+import 'package:entrepreneur/game/components/player.dart';
 
 class MainScene extends Component with HasGameRef {
   @override
